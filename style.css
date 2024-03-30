@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    border:solid salmon;
+    flex-direction: column;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    border: solid green;
+    align-items: center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.logo-container {
+    border: solid orange;
+}
+
+.logo {
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.pexels.com/photos/3661260/pexels-photo-3661260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+.navBarLeft {
+    border: solid red;
+    width: 40%;
+}
+
+.navBarRight {
+    border: solid blue;
+    width: 30%;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    border: solid paleturquoise;
+}
+
+.nav-bar-item {
+    border: solid darkcyan;
+    list-style:none;
+    text-wrap: nowrap;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    border: solid yellow;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Picture Container */
+.center-container {
+    display: flex;
+    border: solid brown;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+}
+.main-picture-container {
+    margin-left: auto;
+    margin-right: 12%;
+    width: 40vw;
+    height:100%;
+    /* border: solid blue; */
+}
+
+.main-picture {
+    width: 100%;
+    height:100%;
+    background-size: cover; 
+    /* background-position: center; */ 
+    border: solid grey;
+    background-image: url('https://images.pexels.com/photos/8014484/pexels-photo-8014484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+
+.main-picture-text {
+    border: solid black;
+    position: absolute;
+    z-index:1;
+    width: 68%;
+    height:20%;
+    font-size: 3.6vh;
+    left: 5%;
+    top: 42%;
+    background-color: rgba(215, 220, 225, 0.197);
+    border: none;
+    border-radius: 2vw;
+    padding: 2vw;
+}
+
+/* Companies that trust us Slider */
+.companies-slider-container {
+    border: solid lightblue;
+}
+
+/* Reviews Container */
+.reviews-container {
+    display: flex;
+    border: solid brown;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title-container {
+    border: solid seagreen;
+}
+
+.all-reviews {
+    border: solid slateblue;
+}
+
+/* Attention Container */
+.attention-container {
+    display: flex;
+    border: solid burlywood;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.schedule-demo {
+    border: solid hotpink;
+}
+
+.attention-title {
+    border: solid goldenrod;
+}
+
+/* footer */
+footer {
+    display: flex;
+    border: solid burlywood;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-column {
+    border: solid greenyellow;
+}
