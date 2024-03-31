@@ -40,7 +40,96 @@
 
         </nav>
 
+        <!-- Main -->
         <main>
+
+            <!-- Hidden signup container -->
+            <div class="signup-container">
+                <div class="register-main-container">
+                    <!-- Create Account Form -->
+                      <div class="create-account-form">
+            
+                        <div class="input-title">
+                            <h2>create an account</h2>
+                        </div>
+            
+                        <form onsubmit="return handleCreateAccount()">
+            
+                            <fieldset>
+                        <label for="signup-first-name">First Name</label><br>
+                        <input type="text" class="form-input form-input-register" id="signup-first-name" required>
+                        <br><br>
+                        <label for="signup-last-name">Last Name</label><br>
+                        <input type="text" class="form-input form-input-register" id="signup-last-name" required>
+                        <br><br>
+                        <label for="signup-email">Email</label><br>
+                        <input type="text" class="form-input form-input-register" id="signup-email" required>
+                        <br><br>
+                        <label for="signup-password">Password</label><br>
+                        <input type="text" class="form-input form-input-register" id="signup-password" required>
+                        <br><br>
+                        <label for="confirm-password">Confirm Password</label><br>
+                        <input type="text" class="form-input form-input-register" id="confirm-password" required>
+                            </fieldset>
+            
+                        <div class="register-form-btn-div">
+                            <button type="submit">Submit</button>
+                        </div>
+            
+                        </form>
+            
+            
+                        <p>
+                            By creating an account, you agree to our     Privacy Policy and Terms Conditions
+                        </p>
+                      </div>
+            
+                        <!-- Login with social profile -->
+                        <div class="login-with-social">
+            
+                            <h2>or use your social profile</h2>
+            
+                            <hr class="register-hr">
+            
+                            <p>
+                                No extra passwords to remember. 
+                                We never share any of your data or post anything 
+                                on your behalf.
+                            </p>
+            
+                            <div class="register-form-btn-div"><button class="form-input-btn register-btn blue-btn"> log in with facebook</button></div>
+                            <br>
+                            <div class="register-form-btn-div"><button class="form-input-btn register-btn red-btn">log in with google</button></div>
+                           
+                            
+                        </div>
+                    </div>
+    
+            </div>
+
+            <!-- Hidden login container -->
+            <div class="login-container">
+
+             <!-- Login Page -->
+            <section class="input-section">
+                <div class="input-title">
+                    Login Page
+                </div>
+
+                <form class="form-input" onsubmit="return submitLogin()">
+                    <label for="login-email">Email</label>
+                    <input placeholder="Enter Your Email" type="text" id="login-email"><br>
+
+                    <label for="login-password">Password</label>
+                    <input placeholder="Enter Your Password" type="text" id="login-password"><br>
+
+                    <button type="submit">Login</button>
+                </form>
+
+            </section>
+
+            </div>
+
         <!-- Main -->
 
             <!-- Main Picture Container -->

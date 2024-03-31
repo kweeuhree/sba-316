@@ -22,12 +22,13 @@ nav {
 } */
 
 .logo-container {
-    border: solid orange;
+    /* border: solid orange; */
 }
 
 .logo {
     width: 5vw;
     height: 5vw;
+    border: 1px solid rgba(31, 31, 158, 0.623);
     border-radius: 50%;
     background-size: cover;
     background-position: center;
@@ -99,16 +100,23 @@ ul {
     border: 1px solid rgba(82, 82, 230, 0.199);
 }
 
-/* .overlay {
-    top:100%;
-    left:0;
+.signup-container, .login-container  {
+    display: none;
     position: absolute;
-    z-index: 10;
-    background-color: white;
-    height: 5vh;
-    border: solid lime;
-    display: flex;
-} */
+    margin: 0 auto;
+    background-color: rgba(233, 225, 225, 0.842);
+    z-index: 100;
+}
+
+
+.blur {
+    background-color:  gray;
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    z-index: 95;
+}
+
 /* Main */
 
 main {

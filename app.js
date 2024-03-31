@@ -1,6 +1,3 @@
-// generate a menu that will open onhover and change text 
-// based on what mouse was hovered over
-//get navBarLeft
 const onHoverNavBar = [
     {
         li: 'Platform',
@@ -27,9 +24,14 @@ const onHoverNavBar = [
     }
 ]
 
-const leftListItems = document.getElementsByClassName('nav-bar-item left');
-for (let i = 0; i < leftListItems.length; i++) {
-    leftListItems[i].addEventListener('mouseover', handleMouseOver);
+// ----------------------------------------------------------------------------//
+//------------------------------------dropdowns--------------------------------//
+
+function addEventListenersToNavItems() {
+    const leftListItems = document.getElementsByClassName('nav-bar-item left');
+    for (let i = 0; i < leftListItems.length; i++) {
+        leftListItems[i].addEventListener('mouseover', handleMouseOver);
+    }
 }
 
 function handleMouseOver(event) {
@@ -95,3 +97,102 @@ function closeDropDown() {
         overlay.remove();
     }
 }
+
+// ----------------------------------------------------------------------------//
+//--------------------------------------signup---------------------------------//
+function addEventListenerSingUp() {
+    const singUpButton = document.querySelector('#signup');
+    singUpButton.addEventListener('click', displaySignUp);
+}
+
+function displaySignUp(event) {
+    addBlur();
+    const hiddenContainer = document.querySelector('.signup-container');
+    
+    // Get the computed display style
+    let computedStyle = window.getComputedStyle(hiddenContainer).display;
+
+    // Toggle the display style based on the current state
+    if(computedStyle === 'none') {
+        hiddenContainer.style.display = 'flex';
+    } else {
+        hiddenContainer.style.display = 'none';
+    }
+}
+
+function handleCreateAccount() {
+    alert('Account has been created!');
+}
+// ----------------------------------------------------------------------------//
+//--------------------------------------login---------------------------------//
+function addEventListenerLogin() {
+    const loginButton = document.querySelector('#login');
+    loginButton.addEventListener('click', displayLogin);
+}
+
+function displayLogin(event) {
+    addBlur();
+    console.log('inside display login');
+    const hiddenContainer = document.querySelector('.login-container');
+    
+    // Get the computed display style
+    let computedStyle = window.getComputedStyle(hiddenContainer).display;
+
+    // Toggle the display style based on the current state
+    if(computedStyle === 'none') {
+        hiddenContainer.style.display = 'flex';
+    } else {
+        hiddenContainer.style.display = 'none';
+    }
+}
+
+function submitLogin() {
+    alert('You have been logged in');
+}
+
+// ----------------------------------------------------------------------------//
+//---------------------------------blur and overlay----------------------------//
+function addEventListenerBlur() {
+    const blur = document.querySelector('.blur');
+    if(blur) {
+        blur.addEventListener('click', closeOverlay);
+    }
+    
+}
+
+function addBlur() {
+    document.body.classList.add('blur');
+    console.log(blur)
+}
+
+function removeBlur() {
+    console.log('inside removeblur')
+    document.body.classList.remove('blur');
+}
+
+function closeOverlay(event){
+    removeBlur();
+    console.log('inside closeoverlay')
+    const loginContainer = document.querySelector('.login-container');
+    const signupContainer = document.querySelector('.signup-container');
+
+    let computedStyleLogin = window.getComputedStyle(loginContainer).display;
+    let computedStyleSignup = window.getComputedStyle(signupContainer).display;
+
+    if(computedStyleLogin === 'block') {
+        loginContainer.style.display = 'none';
+    }
+
+    if(computedStyleSignup === 'block') {
+        signupContainer.style.display = 'none';
+    }
+
+
+}
+
+// ----------------------------------------------------------------------------//
+//--------------------------------------listeners------------------------------//
+addEventListenerLogin();
+addEventListenersToNavItems();
+addEventListenerSingUp();
+addEventListenerBlur();
