@@ -3,6 +3,7 @@ body {
     /* border:solid salmon; */
     flex-direction: column;
     margin: 0;
+    width: 100%;
 }
 
 /* Navigation Bar */
@@ -149,15 +150,16 @@ main {
     display: flex;
     position: relative;
     flex-direction: column;
-    border: solid yellow;
+    border: solid black;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 /* Main Picture Container */
 .center-container {
     display: flex;
-    border: solid brown;
+    /* border: solid brown; */
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -178,7 +180,7 @@ main {
     height:100%;
     background-position: center 45%;
     /* background-position: center; */ 
-    border: solid grey;
+    /* border: solid grey; */
     background-image: url('https://images.pexels.com/photos/8014484/pexels-photo-8014484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
 }
 
@@ -198,8 +200,26 @@ main {
 }
 
 /* Companies that trust us Slider */
+.companies-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 .companies-slider-container {
-    border: solid lightblue;
+    border: 1px solid rgba(77, 77, 167, 0.678);
+    border-radius: 1vw;
+    min-width: 75%;
+    max-height: 7vh;
+    display: flex;
+    gap: 4%;
+    overflow: hidden;
+}
+
+.slider-image {
+    width: 10vw;
+    height: 5vh;
 }
 
 /* Reviews Container */

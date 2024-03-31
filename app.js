@@ -22,7 +22,29 @@ const onHoverNavBar = [
             ['Hybrid Events', 'Experience the future of events with our innovative hybrid event solutions']
         ]
     }
-]
+];
+
+let currentIndex = 0;
+const slideInterval = 3000; 
+
+const sliderItems = [
+    {
+        name: 'item1',
+        img: 'https://banner2.cleanpng.com/20180425/yvw/kisspng-microsoft-logo-organization-san-francisco-cloud-co-partner-5ae00ee7a9b690.0311390615246333196952.jpg'
+    }, {
+        name: 'item2',
+        img: 'https://upload.wikimedia.org/wikipedia/sco/thumb/e/e0/United_Airlines_Logo.svg/2560px-United_Airlines_Logo.svg.png'
+    }, {
+        name: 'item3',
+        img: 'https://banner2.cleanpng.com/20180806/pzx/kisspng-logo-norwegian-air-shuttle-norway-direct-flight-ai-fly-5b6830ae4c6a21.812950671533554862313.jpg'
+    }, {
+        name: 'item4',
+        img: 'https://banner2.cleanpng.com/20180809/pzj/kisspng-unilever-logo-company-brand-vector-graphics-lista-companii-pot-lucra-5b6cd73b1abb41.6926810915338596431095.jpg'
+    }, {
+        name: 'item5',
+        img: 'https://i.pinimg.com/736x/a7/64/28/a76428e744bdc2422377dc23378c57c5.jpg'
+    }
+];
 
 // ----------------------------------------------------------------------------//
 //------------------------------------dropdowns--------------------------------//
@@ -202,3 +224,28 @@ function removeCloseButton() {
 addEventListenerLogin();
 addEventListenersToNavItems();
 addEventListenerSingUp();
+populateSlider();
+// ----------------------------------------------------------------------------//
+//---------------------------------------slider--------------------------------//
+
+
+function populateSlider() {
+    const sliderContainer = document.querySelector('.companies-slider-container');
+
+    for(let item of sliderItems) {
+        const slide = document.createElement('img');
+        slide.setAttribute('class', 'slider-image');
+        slide.src = item.img;
+        sliderContainer.appendChild(slide);
+    }
+
+    setInterval(nextSlide, slideInterval);
+}
+
+
+function nextSlide() {
+    const slides = document.querySelectorAll('.slider-image');
+    slides[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % slides.length;
+    slides[currentIndex].classList.add('active');
+}
