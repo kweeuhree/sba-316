@@ -4,6 +4,7 @@ body {
     flex-direction: column;
     margin: 0;
     width: 100%;
+    position: relative;
 }
 
 /* Navigation Bar */
@@ -104,6 +105,7 @@ ul {
     display: none;
     position: absolute;
     margin: 0 auto;
+    top: 0;
     background-color: rgba(243, 238, 248, 0.911);
     border: 1px solid rgba(209, 206, 233, 0.911);
     box-shadow: 7px 11px 33px 2px rgba(183, 195, 228, 0.5);
@@ -201,7 +203,7 @@ main {
     height:20%;
     font-size: 3.6vh;
     left: 5%;
-    bottom: 25%;
+    bottom: 45%;
     background-color: rgba(215, 220, 225, 0.197);
     border: none;
     border-radius: 2vw;
@@ -234,17 +236,82 @@ main {
 /* Reviews Container */
 .reviews-container {
     display: flex;
-    border: solid brown;
+    border: 1px solid slateblue;
+    /* border: solid brown; */
     justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
+    margin-top: 2em;
+    width: 95%;
 }
 
 .title-container {
-    border: solid seagreen;
+    /* border: solid seagreen; */
+    letter-spacing: 0.4vw;
 }
 
 .all-reviews {
-    border: solid slateblue;
+    display: flex;
+}
+
+/* Single review container */
+.review-container {
+    padding-top: 1vh;
+    /* border: solid green; */
+    display: flex;
+    height: 40vh;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    background-color:  unset;
+    border-bottom: 5px solid transparent;
+    overflow: hidden;
+    transition: border-bottom 400ms linear 100ms;
+}
+
+.review-container:hover {
+    border-bottom: 5px solid rgba(41, 41, 163, 0.692);
+    background-color:rgba(148, 148, 202, 0.199);
+}
+.review-container:hover > .review-image-container {
+    width: 26vw;
+    height: 26vh;
+}
+
+.review-name {
+    align-self: left;
+    /* border: solid salmon; */
+    font-size:1.5em;
+    letter-spacing: 0.2vw;
+    color: rgba(33, 33, 90, 0.822);
+    position: absolute;
+    top: 30%;
+    right: 3%;
+    background-color: rgba(255, 255, 255, 0.596);
+}
+
+.review-image-container {
+    /* border: solid red; */
+    width: 22vw;
+    height: 22vh;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    transition: width 400ms linear 100ms, height 400ms linear 100ms;
+}
+
+.review-image {
+    /* border: solid blue; */
+    /* border-radius: 50%; */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-review {
+    /* border: solid grey; */
+    letter-spacing: 0.05vw;
+    padding: 1vw;
 }
 
 /* Attention Container */

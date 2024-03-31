@@ -46,6 +46,24 @@ const sliderItems = [
     }
 ];
 
+const allReviews = [
+    {
+        name: 'Cindy',
+        img: 'https://images.pexels.com/photos/11929283/pexels-photo-11929283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        review: 'Delighted by the virtual event platform\'s versatility and adaptability. With its multi-faceted approach to content delivery and interactive features, it felt empowered to roam freely and discover new horizons.'
+    },
+    {
+        name: 'Joe',
+        img: 'https://images.pexels.com/photos/10182734/pexels-photo-10182734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        review: 'I was impressed by the agility and speed of the virtual event platform. With its sleek interface and swift navigation, it felt right at home, eagerly hunting down the latest sessions.'
+    },
+    {
+        name: 'Sheila',
+        img: 'https://images.pexels.com/photos/15159243/pexels-photo-15159243/free-photo-of-close-up-of-dinosaur-in-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        review: 'I found the virtual event platform to be a true defender of knowledge. With its robust security features against T-Rex and sturdy infrastructure, it felt safe to explore and engage in a variety of educational sessions.'
+    }
+]
+
 // ----------------------------------------------------------------------------//
 //------------------------------------dropdowns--------------------------------//
 
@@ -266,13 +284,14 @@ addEventListenerLogin();
 addEventListenersToNavItems();
 addEventListenerSingUp();
 populateSlider();
+populateReviews();
 // ----------------------------------------------------------------------------//
 //---------------------------------------slider--------------------------------//
 function populateSlider() {
     const sliderContainer = document.querySelector('.companies-slider-container');
 
     for(let item of sliderItems) {
-        const slide = document.createElement('img');
+        let slide = document.createElement('img');
         slide.setAttribute('class', 'slider-image');
         slide.src = item.img;
         sliderContainer.appendChild(slide);
@@ -289,4 +308,35 @@ function nextSlide() {
 }
 
 // ----------------------------------------------------------------------------//
-//---------------------------------------login validation--------------------------------//
+//------------------------------------reviews----------------------------------//
+function populateReviews() {
+    const allReviewsContainer = document.querySelector('.all-reviews');
+
+    for(let object of allReviews) {
+        const reviewContainer = document.createElement('div');
+        reviewContainer.setAttribute('class', 'review-container');
+
+        const name = document.createElement('h4');
+        name.innerHTML = object.name;
+        name.setAttribute('class', 'review-name');
+
+        const reviewerImg = document.createElement('img');
+        reviewerImg.src = object.img;
+        reviewerImg.setAttribute('class', 'review-image');
+        
+        const imgContainer = document.createElement('div');
+        imgContainer.setAttribute('class', 'review-image-container');
+        imgContainer.appendChild(reviewerImg);
+
+        const review = document.createElement('div');
+        review.innerHTML = object.review;
+        review.setAttribute('class', 'review-review');
+
+        
+        reviewContainer.appendChild(imgContainer);
+        reviewContainer.appendChild(name);
+        reviewContainer.appendChild(review);
+
+        allReviewsContainer.appendChild(reviewContainer);
+    }
+}
