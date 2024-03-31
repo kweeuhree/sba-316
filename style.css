@@ -5,6 +5,8 @@ body {
     margin: 0;
     width: 100%;
     position: relative;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
 }
 
 /* Navigation Bar */
@@ -161,10 +163,11 @@ main {
     display: flex;
     position: relative;
     flex-direction: column;
-    border: solid black;
+    /* border: solid black; */
     justify-content: center;
     align-items: center;
     width: 100%;
+   
 }
 
 /* Main Picture Container */
@@ -203,12 +206,17 @@ main {
     width: 68%;
     height:20%;
     font-size: 3.6vh;
+    font-weight: 700;
     left: 5%;
     bottom: 20%;
-    background-color: rgba(215, 220, 225, 0.197);
+    background-color: rgba(33, 26, 139, 0.568);;
     border: none;
     border-radius: 2vw;
     padding: 2vw;
+    color:rgba(255, 255, 255, 0.781);
+    letter-spacing: 0.2vw;
+    word-spacing: 0.5vw;
+    box-shadow: 10px 10px 122px 5px rgb(158, 155, 155);
 }
 
 /* Companies that trust us Slider */
@@ -248,6 +256,7 @@ main {
     margin-bottom: 4em;
     width: 95%;
     height: 60vh;
+    cursor: pointer;
 }
 
 .title-container {
@@ -274,18 +283,23 @@ main {
     background-color:  unset;
     border-bottom: 5px solid transparent;
     overflow: hidden;
-    transition: border-bottom 400ms linear 100ms;
+    transition: border-bottom 400ms linear 100ms
+    ,background-color 100ms linear 40ms;
 }
 
 .review-container:hover {
     border-bottom: 5px solid rgba(41, 41, 163, 0.692);
-    background-color:rgba(148, 148, 202, 0.199);
+    background-color:rgba(175, 175, 221, 0.199);
 }
 
 .review-container:hover > .review-image-container {
     width: 26vw;
     height: 26vh;
 }
+
+.review-container:hover > .review-review {
+    background-color: rgba(255, 255, 255, 0.527);
+} 
 
 .review-name {
     align-self: left;
@@ -317,6 +331,7 @@ main {
 
 .review-review {
     background-color: rgba(211, 205, 248, 0.233);
+    transition:background-color 100ms linear 40ms;
     border: 1px solid grey;
     border-radius: 0.5vw;
     letter-spacing: 0.05vw;
@@ -357,6 +372,7 @@ main {
     color: white;
     padding: 1.5vw;
     border-radius: 1vw;
+    cursor: pointer;
     transition: background-color 300ms linear 50ms;
 }
 
@@ -392,22 +408,21 @@ main {
 /* footer */
 footer {
     display: flex;
-    border: solid burlywood;
+    border-bottom: 15px solid rgba(81, 70, 228, 0.87);
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
+    padding-bottom: 5%;
+
 }
 
 .footer-column {
-    border: solid greenyellow;
+    /* border: solid greenyellow; */
 }
 
 .footer-title {
-    border: solid purple;
+    /* border: solid purple; */
     text-transform: uppercase;
-}
-
-.footer-anchor {
-    border: solid blue;
+    font-weight: 600;
 }
 
 .footer-ul {
@@ -417,4 +432,11 @@ footer {
 footer li {
     list-style: none;
     cursor:pointer;
+}
+footer li:hover {
+    text-decoration: underline;
+
+}
+.copy {
+    order: 2;
 }
