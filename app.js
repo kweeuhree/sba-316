@@ -143,8 +143,27 @@ function displaySignUp(event) {
     }
 }
 
-function handleCreateAccount() {
-    alert('Account has been created!');
+function handleCreateAccount(event) {
+    event.preventDefault();
+
+    let formInputs = document.forms["signup"].elements;
+
+    // Loop through the form inputs to check for empty values
+    for (let i = 0; i < formInputs.length; i++) {
+        if (formInputs[i].value === "") {
+            // Alert the user about the invalid input
+            alert(`Invalid ${formInputs[i].name}`);
+            formInputs[i].focus();
+            return false; 
+        } else {
+            alert('Account has been created!');
+            clearForm('signup');
+            closeOverlay('signup');
+            return true;
+        }
+        
+    }
+    
 }
 // ----------------------------------------------------------------------------//
 //--------------------------------------login---------------------------------//
@@ -170,8 +189,26 @@ function displayLogin(event) {
     }
 }
 
-function submitLogin() {
-    alert('You have been logged in');
+function submitLogin(event) {
+    event.preventDefault();
+
+    let formInputs = document.forms["login"].elements;
+
+    // Loop through the form inputs to check for empty values
+    for (let i = 0; i < formInputs.length; i++) {
+        if (formInputs[i].value === "") {
+            // Alert the user about the invalid input
+            alert(`Invalid ${formInputs[i].name}`);
+            formInputs[i].focus();
+            return false; 
+        } else {
+            alert('You have been logged in');
+            closeOverlay('login');
+            clearForm('login');
+            return true;
+        }
+    }
+    
 }
 
 // ----------------------------------------------------------------------------//
@@ -219,6 +256,10 @@ function removeCloseButton() {
     const closeButton = document.querySelector('.close-btn');
     document.body.removeChild(closeButton);
 }
+
+function clearForm(id) {
+    document.forms[id].reset();
+}
 // ----------------------------------------------------------------------------//
 //--------------------------------------listeners------------------------------//
 addEventListenerLogin();
@@ -227,8 +268,6 @@ addEventListenerSingUp();
 populateSlider();
 // ----------------------------------------------------------------------------//
 //---------------------------------------slider--------------------------------//
-
-
 function populateSlider() {
     const sliderContainer = document.querySelector('.companies-slider-container');
 
@@ -242,10 +281,12 @@ function populateSlider() {
     setInterval(nextSlide, slideInterval);
 }
 
-
 function nextSlide() {
     const slides = document.querySelectorAll('.slider-image');
     slides[currentIndex].classList.remove('active');
     currentIndex = (currentIndex + 1) % slides.length;
     slides[currentIndex].classList.add('active');
 }
+
+// ----------------------------------------------------------------------------//
+//---------------------------------------login validation--------------------------------//
