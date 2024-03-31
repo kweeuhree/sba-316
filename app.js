@@ -107,6 +107,7 @@ function addEventListenerSingUp() {
 
 function displaySignUp(event) {
     addBlur();
+    addCloseButton('signup');
     const hiddenContainer = document.querySelector('.signup-container');
     
     // Get the computed display style
@@ -131,6 +132,7 @@ function addEventListenerLogin() {
 }
 
 function displayLogin(event) {
+    addCloseButton('login');
     addBlur();
     console.log('inside display login');
     const hiddenContainer = document.querySelector('.login-container');
@@ -151,18 +153,9 @@ function submitLogin() {
 }
 
 // ----------------------------------------------------------------------------//
-//---------------------------------blur and overlay----------------------------//
-function addEventListenerBlur() {
-    const blur = document.querySelector('.blur');
-    if(blur) {
-        blur.addEventListener('click', closeOverlay);
-    }
-    
-}
-
+//----------------------------blur, overlay, close btn-------------------------//
 function addBlur() {
     document.body.classList.add('blur');
-    console.log(blur)
 }
 
 function removeBlur() {
@@ -170,29 +163,42 @@ function removeBlur() {
     document.body.classList.remove('blur');
 }
 
-function closeOverlay(event){
+function closeOverlay(id) {
     removeBlur();
-    console.log('inside closeoverlay')
+    console.log('inside closeoverlay');
+
+    // Select login and signup containers
     const loginContainer = document.querySelector('.login-container');
     const signupContainer = document.querySelector('.signup-container');
 
-    let computedStyleLogin = window.getComputedStyle(loginContainer).display;
-    let computedStyleSignup = window.getComputedStyle(signupContainer).display;
-
-    if(computedStyleLogin === 'block') {
+    // Check if login container exists and is visible, then hide it
+    if (id==='login') {
         loginContainer.style.display = 'none';
     }
 
-    if(computedStyleSignup === 'block') {
+    // Check if signup container exists and is visible, then hide it
+    if (id==='signup') {
         signupContainer.style.display = 'none';
     }
-
-
+    removeCloseButton();
 }
 
+function addCloseButton(id) {
+    const closeButton = document.createElement('div');
+    closeButton.setAttribute('class', 'close-btn');
+    closeButton.innerHTML = '&#10006;';
+    document.body.appendChild(closeButton);
+    closeButton.addEventListener('click', function() {
+        closeOverlay(id);
+    });
+}
+
+function removeCloseButton() {
+    const closeButton = document.querySelector('.close-btn');
+    document.body.removeChild(closeButton);
+}
 // ----------------------------------------------------------------------------//
 //--------------------------------------listeners------------------------------//
 addEventListenerLogin();
 addEventListenersToNavItems();
 addEventListenerSingUp();
-addEventListenerBlur();

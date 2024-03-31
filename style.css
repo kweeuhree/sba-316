@@ -17,10 +17,6 @@ nav {
     transition: background-color 400ms linear 40ms;
 }
 
-/* nav:hover {
-    background-color: rgba(132, 132, 194, 0.349);
-} */
-
 .logo-container {
     /* border: solid orange; */
 }
@@ -46,6 +42,7 @@ nav {
     /* border: solid blue; */
     width: 30%;
 }
+
 ul {
     display: flex;
     justify-content: space-around;
@@ -62,10 +59,11 @@ ul {
     cursor: pointer;
     margin-right: auto;
 }
+
 .nav-bar-item:hover {
     text-decoration: underline;
 }
-
+/* Hover Menu */
 .menu-segment {
     display: flex;
     flex-direction:column;
@@ -86,7 +84,7 @@ ul {
 .segment-title {
     font-weight:600;
 }
-
+/* Right Side Nav */
 #join {
     background-color: rgba(82, 82, 230, 0.199);
     border-radius: 2vw;
@@ -100,21 +98,49 @@ ul {
     border: 1px solid rgba(82, 82, 230, 0.199);
 }
 
+/* Overlay */
 .signup-container, .login-container  {
     display: none;
     position: absolute;
     margin: 0 auto;
-    background-color: rgba(233, 225, 225, 0.842);
-    z-index: 100;
+    background-color: rgba(248, 238, 238, 0.911);
+    z-index: 99;
+    gap: 5%;
+    padding: 15%;
+    height: 50vh;
+    min-width: 35vw;
 }
 
+.input-section, form {
+    display: flex;
+    gap: 15%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 .blur {
-    background-color:  gray;
+    background-color:  rgb(109, 97, 97);
     position: absolute;
     width: 100vw;
     height:100vh;
     z-index: 95;
+}
+
+.close-btn {
+    width: 3vw;
+    height:3vw;
+    background-color: rgba(250, 83, 33, 0.87);
+    border: 1px solid rgb(197, 94, 25);
+    border-radius: 1vw;
+    position: absolute;
+    right: 20%;;
+    top: 15%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Main */
@@ -137,9 +163,11 @@ main {
     width: 100%;
     height: 80vh;
 }
+
 .main-picture-container {
     margin-left: auto;
     margin-right: 12%;
+    position: relative;
     width: 40vw;
     height:100%;
     /* border: solid blue; */
@@ -162,7 +190,7 @@ main {
     height:20%;
     font-size: 3.6vh;
     left: 5%;
-    top: 42%;
+    bottom: 25%;
     background-color: rgba(215, 220, 225, 0.197);
     border: none;
     border-radius: 2vw;
