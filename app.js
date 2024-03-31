@@ -63,7 +63,6 @@ const allReviews = [
         review: 'I found the virtual event platform to be a true defender of knowledge. With its robust security features against T-Rex and sturdy infrastructure, it felt safe to explore and engage in a variety of educational sessions.'
     }
 ]
-
 // ----------------------------------------------------------------------------//
 //------------------------------------dropdowns--------------------------------//
 
@@ -285,6 +284,8 @@ addEventListenersToNavItems();
 addEventListenerSingUp();
 populateSlider();
 populateReviews();
+populateFooter();
+handleScheduleDemo();
 // ----------------------------------------------------------------------------//
 //---------------------------------------slider--------------------------------//
 function populateSlider() {
@@ -305,8 +306,16 @@ function nextSlide() {
     slides[currentIndex].classList.remove('active');
     currentIndex = (currentIndex + 1) % slides.length;
     slides[currentIndex].classList.add('active');
+}// ----------------------------------------------------------------------------//
+//------------------------------------demo----------------------------------//
+function handleScheduleDemo() {
+    const button = document.querySelector('.schedule-demo');
+    button.addEventListener('click', scheduleDemo);
 }
 
+function scheduleDemo(event) {
+    alert('This service is coming soon!');
+}
 // ----------------------------------------------------------------------------//
 //------------------------------------reviews----------------------------------//
 function populateReviews() {
@@ -332,11 +341,36 @@ function populateReviews() {
         review.innerHTML = object.review;
         review.setAttribute('class', 'review-review');
 
-        
         reviewContainer.appendChild(imgContainer);
         reviewContainer.appendChild(name);
         reviewContainer.appendChild(review);
 
         allReviewsContainer.appendChild(reviewContainer);
+    }
+}
+
+// ----------------------------------------------------------------------------//
+//------------------------------------footer----------------------------------//
+function populateFooter() {
+    const footerContainer = document.querySelector('footer');
+
+    //create template
+    const columnTemplate = document.querySelector('#footer-template');
+
+    for(let object of onHoverNavBar) {
+        const footerColumn = columnTemplate.content.cloneNode(true);
+
+        footerColumn.querySelector('.footer-title').textContent = object.li;
+
+        let footerUl = footerColumn.querySelector('.footer-ul');
+
+        for(let array of object.content) {
+            const listItem = document.createElement('li');
+            listItem.textContent = array[0];
+            footerUl.appendChild(listItem);
+        }
+
+        footerContainer.appendChild(footerColumn);
+        
     }
 }
