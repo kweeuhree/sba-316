@@ -73,10 +73,10 @@
                         <input type="text" class="form-input" id="signup-email" name="email" required>
                         <br><br>
                         <label for="signup-password">Password</label><br>
-                        <input type="text" class="form-input" id="signup-password" name="password" required>
+                        <input type="text" class="form-input" id="signup-password" title="Password must be 8-12 characters long, contain at least one lowercase letter, one uppercase letter, and one digit" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,12}$" name="password" required>
                         <br><br>
                         <label for="confirm-password">Confirm Password</label><br>
-                        <input type="text" class="form-input" id="confirm-password" name=" confirm password" required>
+                        <input type="text" class="form-input" id="confirm-password" title="Password must be 8-12 characters long, contain at least one lowercase letter, one uppercase letter, and one digit" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,12}$" name=" confirm password" required>
                             </fieldset>
             
                         <div class="register-form-btn-div">

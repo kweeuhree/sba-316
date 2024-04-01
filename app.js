@@ -24,8 +24,8 @@ const onHoverNavBar = [
     }
 ];
 
-let currentIndex = 0;
-const slideInterval = 3000; 
+// let currentIndex = 0;
+// const slideInterval = 3000; 
 
 const sliderItems = [
     {
@@ -298,15 +298,16 @@ function populateSlider() {
         sliderContainer.appendChild(slide);
     }
 
-    setInterval(nextSlide, slideInterval);
+    // setInterval(nextSlide, slideInterval);
 }
 
-function nextSlide() {
-    const slides = document.querySelectorAll('.slider-image');
-    slides[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add('active');
-}// ----------------------------------------------------------------------------//
+// function nextSlide() {
+//     const slides = document.querySelectorAll('.slider-image');
+//     slides[currentIndex].classList.remove('active');
+//     currentIndex = (currentIndex + 1) % slides.length;
+//     slides[currentIndex].classList.add('active');
+// }
+// ----------------------------------------------------------------------------//
 //------------------------------------demo----------------------------------//
 function handleScheduleDemo() {
     const button = document.querySelector('.schedule-demo');
